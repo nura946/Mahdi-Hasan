@@ -11,6 +11,12 @@ const SPECIAL_WORKS = [
 export function SpecialWork() {
   return (
     <section id="special-work" className="py-24">
+      <a 
+        href="#"
+        className="inline-flex items-center text-brand hover:text-green-700 dark:hover:text-green-400 font-medium mb-8 transition-colors"
+      >
+        ← Back to Home
+      </a>
       <SectionHeading 
         title="Special Work." 
         subtitle="Some of my best handwriting transformations and special pieces."

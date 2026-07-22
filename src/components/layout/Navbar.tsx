@@ -1,13 +1,25 @@
 import { useEffect, useState } from 'react';
 import { motion, useScroll, useSpring } from 'motion/react';
-import { Moon, Sun, Menu, X } from 'lucide-react';
+import { Moon, Sun, Menu, X, ChevronDown } from 'lucide-react';
 
-const NAV_LINKS = [
+type NavLink = {
+  label: string;
+  href?: string;
+  subLinks?: { label: string; href: string; }[];
+};
+
+const NAV_LINKS: NavLink[] = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Special Work', href: '#special-work' },
+  { 
+    label: 'More', 
+    subLinks: [
+      { label: 'Why Learn From Me', href: '#why-learn-from-me' },
+      { label: 'Special Work', href: '#special-work' }
+    ]
+  },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -52,15 +64,37 @@ export function Navbar() {
             Mahdi Hasan<span className="text-brand">.</span>
           </a>
 
-          <nav className="hidden md:flex flex-1 justify-center space-x-8">
+          <nav className="hidden md:flex flex-1 justify-center space-x-8 items-center">
             {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
-              >
-                {link.label}
-              </a>
+              link.subLinks ? (
+                <div key={link.label} className="relative group">
+                  <button className="flex items-center gap-1 text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors py-2">
+                    {link.label}
+                    <ChevronDown size={16} className="group-hover:rotate-180 transition-transform duration-200" />
+                  </button>
+                  <div className="absolute top-full left-1/2 -translate-x-1/2 mt-0 pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 w-48">
+                    <div className="bg-white dark:bg-[#111] border border-gray-100 dark:border-gray-800 rounded-xl shadow-lg p-2 flex flex-col">
+                      {link.subLinks.map((sub) => (
+                        <a
+                          key={sub.href}
+                          href={sub.href}
+                          className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white hover:bg-gray-50 dark:hover:bg-gray-800/50 px-3 py-2 rounded-lg transition-colors text-center"
+                        >
+                          {sub.label}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className="text-sm font-medium text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
           </nav>
 
@@ -87,17 +121,37 @@ export function Navbar() {
           <motion.div 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="md:hidden absolute top-20 left-0 right-0 bg-white dark:bg-[#0a0a0a] border-b border-gray-200 dark:border-gray-800 p-6 flex flex-col space-y-4"
+            className="md:hidden absolute top-20 left-0 right-0 bg-white dark:bg-[#0a0a0a] border-b border-gray-200 dark:border-gray-800 p-6 flex flex-col space-y-4 shadow-lg overflow-y-auto max-h-[calc(100vh-5rem)]"
           >
             {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-lg font-medium text-gray-600 dark:text-gray-400"
-              >
-                {link.label}
-              </a>
+              link.subLinks ? (
+                <div key={link.label} className="flex flex-col space-y-3 pt-2 pb-2 border-y border-gray-100 dark:border-gray-800/50">
+                  <span className="text-lg font-bold text-gray-900 dark:text-white">
+                    {link.label}
+                  </span>
+                  <div className="flex flex-col space-y-3 pl-4">
+                    {link.subLinks.map((sub) => (
+                      <a
+                        key={sub.href}
+                        href={sub.href}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                        className="text-lg font-medium text-gray-600 dark:text-gray-400"
+                      >
+                        {sub.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              ) : (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="text-lg font-medium text-gray-600 dark:text-gray-400"
+                >
+                  {link.label}
+                </a>
+              )
             ))}
           </motion.div>
         )}
