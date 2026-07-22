@@ -40,7 +40,7 @@ const SOCIALS = [
   { icon: MessageCircle, label: 'WhatsApp', href: 'https://wa.me/8801993479343' },
   { icon: Instagram, label: 'Instagram', href: '#' },
   { icon: XIcon, label: 'X', href: '#' },
-  { icon: TikTokIcon, label: 'TikTok', href: '#' },
+  { icon: TikTokIcon, label: 'TikTok', href: 'https://www.tiktok.com/@mahdihandwriting99?_r=1&_t=ZS-98F9e1BUubH' },
 ];
 
 export function Footer() {

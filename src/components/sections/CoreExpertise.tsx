@@ -1,0 +1,86 @@
+import { motion } from 'motion/react';
+import { PenTool, Library, BookOpen, Presentation, Code2, MonitorPlay } from 'lucide-react';
+import { SectionHeading } from '../ui/SectionHeading';
+
+const SKILLS_BENTO = [
+  {
+    icon: PenTool,
+    title: 'Handwriting Mastery',
+    desc: 'Structured methods for Cursive, Print, and Speed Writing across languages.',
+    color: 'text-blue-500',
+    bg: 'bg-blue-50 dark:bg-blue-900/20'
+  },
+  {
+    icon: Library,
+    title: 'Curriculum Design',
+    desc: 'Developing comprehensive syllabi for schools and training academies.',
+    color: 'text-emerald-500',
+    bg: 'bg-emerald-50 dark:bg-emerald-900/20'
+  },
+  {
+    icon: BookOpen,
+    title: 'Handwriting Analysis',
+    desc: 'Identifying pain points and evaluating writing mechanics for rapid improvement.',
+    color: 'text-amber-500',
+    bg: 'bg-amber-50 dark:bg-amber-900/20'
+  },
+  {
+    icon: Presentation,
+    title: 'Workshop Facilitation',
+    desc: 'Engaging large groups of students and teachers in interactive training sessions.',
+    color: 'text-purple-500',
+    bg: 'bg-purple-50 dark:bg-purple-900/20'
+  },
+  {
+    icon: Code2,
+    title: 'Digital Creation',
+    desc: 'Building modern web platforms using React, HTML, CSS, and AI Studio.',
+    color: 'text-rose-500',
+    bg: 'bg-rose-50 dark:bg-rose-900/20'
+  },
+  {
+    icon: MonitorPlay,
+    title: 'Media Production',
+    desc: 'High-quality course recording and editing with Premiere Pro and Canva.',
+    color: 'text-cyan-500',
+    bg: 'bg-cyan-50 dark:bg-cyan-900/20'
+  }
+];
+
+export function CoreExpertise() {
+  return (
+    <section id="core-expertise" className="py-24 bg-gray-50/50 dark:bg-gray-900/20 rounded-3xl mt-12 mb-24">
+      <div className="px-6">
+        <a 
+          href="#"
+          className="inline-flex items-center text-brand hover:text-green-700 dark:hover:text-green-400 font-medium mb-8 transition-colors"
+        >
+          ← Back to Home
+        </a>
+      </div>
+      <div className="max-w-7xl mx-auto px-6">
+        <SectionHeading title="Core Expertise" subtitle="My specialized skills and professional capabilities." />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
+          {SKILLS_BENTO.map((skill, i) => (
+            <motion.div
+              key={skill.title}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white dark:bg-[#0a0a0a] rounded-[2rem] p-8 border border-gray-100 dark:border-gray-800 shadow-sm hover:shadow-xl transition-all duration-300 text-center flex flex-col items-center group hover:-translate-y-1"
+            >
+              <div className={`w-16 h-16 rounded-2xl ${skill.bg} flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                <skill.icon size={32} className={skill.color} />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{skill.title}</h3>
+              <p className="text-gray-500 dark:text-gray-400 leading-relaxed">
+                {skill.desc}
+              </p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
