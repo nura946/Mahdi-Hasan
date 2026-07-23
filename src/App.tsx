@@ -180,9 +180,7 @@ export default function App() {
     <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
       <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
       <Navbar />
-      <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24">
-        <Hero />
-      </main>
+      <Hero />
       <TrustBadges />
       <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24">
         <About />

@@ -1,29 +1,29 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Star } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { LiveTimeAndDate } from '../ui/LiveTimeAndDate';
 import { useLanguage } from '../../lib/LanguageContext';
 
 export function Hero() {
   const { t } = useLanguage();
-  return (
-    <section id="home" className="min-h-screen pt-28 pb-12 overflow-hidden flex flex-col items-center">
-      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Banner Image */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="w-full mb-16 relative rounded-[2rem] overflow-hidden shadow-2xl border border-gray-200 dark:border-gray-800"
-        >
-          {/* Replace this src with your actual uploaded banner image path */}
-          <img 
-            src="/banner.png.png" 
-            alt="Mahdi Handwriting Academy Banner" 
-            className="w-full h-auto object-cover"
-          />
-        </motion.div>
 
-        {/* Text Content */}
+  return (
+    <section id="home" className="w-full flex flex-col items-center pt-16 md:pt-20">
+      {/* Full-width Banner Image */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.7 }}
+        className="w-full relative overflow-hidden flex justify-center bg-gray-50 dark:bg-gray-900/50"
+      >
+        <img 
+          src="/banner.png.png" 
+          alt="Mahdi Handwriting Academy Banner"
+          className="w-full max-w-7xl h-auto object-contain object-center"
+        />
+      </motion.div>
+
+      {/* Text Content inside a constrained container */}
+      <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16 relative">
         <div className="flex flex-col items-center text-center space-y-8 relative z-10 max-w-5xl mx-auto">
           <LiveTimeAndDate />
           
@@ -87,7 +87,7 @@ export function Hero() {
              <p className="mt-4 text-sm font-medium italic text-gray-500">"সুন্দর হাতের লেখাই দিয়ে গড়ে সফলতার পরিচয়"</p>
           </motion.div>
         </div>
-
+        
         {/* Decorative shapes */}
         <div className="absolute top-20 right-0 w-64 h-64 bg-brand/10 rounded-full blur-3xl -z-10" />
         <div className="absolute bottom-20 left-0 w-64 h-64 bg-blue-500/10 rounded-full blur-3xl -z-10" />
