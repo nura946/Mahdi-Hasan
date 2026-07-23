@@ -1,23 +1,24 @@
-import { useState, useEffect } from 'react';
-import { Navbar } from './components/layout/Navbar';
-import { Hero } from './components/sections/Hero';
-import { TrustBadges } from './components/sections/TrustBadges';
-import { About } from './components/sections/About';
-import { WhyLearnFromMe } from './components/sections/WhyLearnFromMe';
-import { TrainingExperience } from './components/sections/TrainingExperience';
-import { Projects } from './components/sections/Projects';
-import { SpecialWork } from './components/sections/SpecialWork';
-import { Transformation } from './components/sections/Transformation';
-import { DigitalLibrary } from './components/sections/DigitalLibrary';
-import { Currently } from './components/sections/Currently';
-import { UpcomingSoon } from './components/sections/UpcomingSoon';
-import { CoreExpertise } from './components/sections/CoreExpertise';
-import { AwardsHonours } from './components/sections/AwardsHonours';
-import { ResearchPublications } from './components/sections/ResearchPublications';
-import { ImageGallery } from './components/sections/ImageGallery';
-import { WorkExtras } from './components/sections/WorkExtras';
-import { Media } from './components/sections/Media';
-import { Footer } from './components/layout/Footer';
+import { useState, useEffect } from "react";
+import { Navbar } from "./components/layout/Navbar";
+import { Hero } from "./components/sections/Hero";
+import { TrustBadges } from "./components/sections/TrustBadges";
+import { About } from "./components/sections/About";
+import { WhyLearnFromMe } from "./components/sections/WhyLearnFromMe";
+import { TrainingExperience } from "./components/sections/TrainingExperience";
+import { Services } from "./components/sections/Services";
+import { Projects } from "./components/sections/Projects";
+import { SpecialWork } from "./components/sections/SpecialWork";
+import { Transformation } from "./components/sections/Transformation";
+import { DigitalLibrary } from "./components/sections/DigitalLibrary";
+import { Currently } from "./components/sections/Currently";
+import { UpcomingSoon } from "./components/sections/UpcomingSoon";
+import { CoreExpertise } from "./components/sections/CoreExpertise";
+import { AwardsHonours } from "./components/sections/AwardsHonours";
+import { ResearchPublications } from "./components/sections/ResearchPublications";
+import { ImageGallery } from "./components/sections/ImageGallery";
+import { WorkExtras } from "./components/sections/WorkExtras";
+import { Media } from "./components/sections/Media";
+import { Footer } from "./components/layout/Footer";
 
 export default function App() {
   const [currentHash, setCurrentHash] = useState(window.location.hash);
@@ -27,12 +28,25 @@ export default function App() {
       setCurrentHash(window.location.hash);
       window.scrollTo(0, 0);
     };
-    
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+
+    window.addEventListener("hashchange", handleHashChange);
+    return () => window.removeEventListener("hashchange", handleHashChange);
   }, []);
 
-  if (currentHash === '#why-learn-from-me') {
+  if (currentHash === "#services") {
+    return (
+      <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
+        <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
+        <Navbar />
+        <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24 pt-20">
+          <Services />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentHash === "#why-learn-from-me") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
@@ -45,7 +59,7 @@ export default function App() {
     );
   }
 
-  if (currentHash === '#special-work') {
+  if (currentHash === "#special-work") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
@@ -58,7 +72,7 @@ export default function App() {
     );
   }
 
-  if (currentHash === '#training-experience') {
+  if (currentHash === "#training-experience") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
@@ -71,7 +85,7 @@ export default function App() {
     );
   }
 
-  if (currentHash === '#transformation') {
+  if (currentHash === "#transformation") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
@@ -84,7 +98,7 @@ export default function App() {
     );
   }
 
-  if (currentHash === '#digital-library') {
+  if (currentHash === "#digital-library") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
@@ -97,7 +111,7 @@ export default function App() {
     );
   }
 
-  if (currentHash === '#currently') {
+  if (currentHash === "#currently") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
@@ -110,7 +124,7 @@ export default function App() {
     );
   }
 
-  if (currentHash === '#upcoming-soon') {
+  if (currentHash === "#upcoming-soon") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
@@ -123,7 +137,7 @@ export default function App() {
     );
   }
 
-  if (currentHash === '#core-expertise') {
+  if (currentHash === "#core-expertise") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
@@ -136,7 +150,7 @@ export default function App() {
     );
   }
 
-  if (currentHash === '#awards-honours') {
+  if (currentHash === "#awards-honours") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
@@ -149,7 +163,7 @@ export default function App() {
     );
   }
 
-  if (currentHash === '#research-publications') {
+  if (currentHash === "#research-publications") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
