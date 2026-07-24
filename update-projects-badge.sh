@@ -1,3 +1,5 @@
+#!/bin/bash
+cat << 'INNEREOF' > src/components/sections/Projects.tsx
 import { SectionHeading } from '../ui/SectionHeading';
 import { motion } from 'motion/react';
 import { ArrowRight, PenTool, Globe, Star, Mail } from 'lucide-react';
@@ -102,3 +104,4 @@ export function Projects() {
     </section>
   );
 }
+INNEREOF

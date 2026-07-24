@@ -34,10 +34,12 @@ const NAV_LINKS: NavLink[] = [
       { labelEn: "Digital Library", labelBn: "ডিজিটাল লাইব্রেরি", href: "#digital-library" },
       { labelEn: "Currently", labelBn: "বর্তমানে", href: "#currently" },
       { labelEn: "Upcoming Soon..", labelBn: "শীঘ্রই আসছে..", href: "#upcoming-soon" },
+      { labelEn: "Uses.", labelBn: "ব্যবহারসমূহ", href: "#uses" },
       { labelEn: "Chat with Mahdi", labelBn: "মাহদীর সাথে কথা বলুন", href: "https://wa.me/8801993479343" },
     ],
   },
   { labelEn: "Projects", labelBn: "প্রজেক্টস", href: "#projects" },
+  { labelEn: "Explore", labelBn: "এক্সপ্লোর", href: "#explore" },
   { labelEn: "Contact", labelBn: "যোগাযোগ", href: "#contact" },
 ];
 

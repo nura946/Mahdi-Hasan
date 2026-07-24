@@ -16,6 +16,8 @@ import { CoreExpertise } from "./components/sections/CoreExpertise";
 import { AwardsHonours } from "./components/sections/AwardsHonours";
 import { ResearchPublications } from "./components/sections/ResearchPublications";
 import { ImageGallery } from "./components/sections/ImageGallery";
+import { Uses } from "./components/sections/Uses";
+import { ExplorePortfolio } from "./components/sections/ExplorePortfolio";
 import { WorkExtras } from "./components/sections/WorkExtras";
 import { Media } from "./components/sections/Media";
 import { Footer } from "./components/layout/Footer";
@@ -163,6 +165,32 @@ export default function App() {
     );
   }
 
+  if (currentHash === "#explore") {
+    return (
+      <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
+        <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
+        <Navbar />
+        <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24 pt-20">
+          <ExplorePortfolio />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
+  if (currentHash === "#uses") {
+    return (
+      <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
+        <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
+        <Navbar />
+        <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24 pt-20">
+          <Uses />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   if (currentHash === "#research-publications") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
@@ -188,7 +216,6 @@ export default function App() {
       </main>
       <ImageGallery />
       <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24">
-        <WorkExtras />
         <Media />
       </main>
       <Footer />

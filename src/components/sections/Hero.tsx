@@ -13,12 +13,12 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.7 }}
-        className="w-full relative overflow-hidden flex justify-center bg-gray-50 dark:bg-gray-900/50"
+        className="w-full relative"
       >
         <img 
           src="/banner.png.png" 
           alt="Mahdi Handwriting Academy Banner"
-          className="w-full max-w-7xl h-auto object-contain object-center"
+          className="w-full h-auto block"
         />
       </motion.div>
 
@@ -33,14 +33,8 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1] mb-6">
-              {t("Learn Beautiful", "সুন্দর লেখা")} <br className="hidden md:block" />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-brand to-emerald-400">
-                {t("HANDWRITING.", "শিখুন।")}
-              </span>
+              {t("Welcome to Mahdi Hasan's Portfolio", "মাহদী হাসানের পোর্টফোলিওতে স্বাগতম")}
             </h1>
-            <p className="font-medium text-xl md:text-2xl text-gray-900 dark:text-gray-200">
-              {t("Write Better. Think Better. Grow Better.", "ভালো লিখুন। ভালো চিন্তা করুন। উন্নতি করুন।")}
-            </p>
           </motion.div>
 
           <motion.div

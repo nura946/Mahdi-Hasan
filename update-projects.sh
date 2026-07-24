@@ -1,3 +1,5 @@
+#!/bin/bash
+cat << 'INNEREOF' > src/components/sections/Projects.tsx
 import { SectionHeading } from '../ui/SectionHeading';
 import { motion } from 'motion/react';
 import { ArrowRight, PenTool, Globe, Star, Mail } from 'lucide-react';
@@ -69,14 +71,14 @@ export function Projects() {
                 <project.icon size={32} />
               </div>
               
-              <div className="flex-1">
+              <div className="flex-1 relative">
                 {project.upcoming && (
-                  <div className="inline-flex items-center px-3 py-1 mb-3 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 rounded-full">
+                  <div className={`absolute top-0 right-0 md:static md:mb-4 lg:absolute lg:top-0 lg:right-0 inline-flex items-center px-3 py-1 text-xs font-bold uppercase tracking-wider text-blue-600 dark:text-blue-400 bg-blue-100 dark:bg-blue-900/30 rounded-full ${project.highlight ? 'static mb-4' : 'mb-4 relative top-auto right-auto'}`}>
                     {t("Upcoming Soon", "শীঘ্রই আসছে")}
                   </div>
                 )}
                 
-                <h3 className={`${project.highlight ? 'text-3xl' : 'text-2xl'} font-bold text-gray-900 dark:text-white mb-2`}>
+                <h3 className={`${project.highlight ? 'text-3xl' : 'text-2xl'} font-bold text-gray-900 dark:text-white mb-2 mt-4 md:mt-0`}>
                   {t(project.titleEn, project.titleBn)}
                 </h3>
                 <p className="text-gray-500 dark:text-gray-400 mb-8 max-w-2xl">
@@ -102,3 +104,4 @@ export function Projects() {
     </section>
   );
 }
+INNEREOF

@@ -1,22 +1,17 @@
 #!/bin/bash
-# 1. Add Uses import
-sed -i 's/import { WorkExtras }/import { Uses } from ".\/components\/sections\/Uses";\nimport { WorkExtras }/' src/App.tsx
+sed -i 's/import { Uses } from ".\/components\/sections\/Uses";/import { Uses } from ".\/components\/sections\/Uses";\nimport { ExplorePortfolio } from ".\/components\/sections\/ExplorePortfolio";/' src/App.tsx
 
-# 2. Add routing for #uses
-sed -i '/if (currentHash === "#research-publications") {/i \
-  if (currentHash === "#uses") {\
+sed -i '/if (currentHash === "#uses") {/i \
+  if (currentHash === "#explore") {\
     return (\
       <div className="min-h-screen bg-[url('\''/portfolio-bg.jpg.jpeg'\'')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">\
         <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />\
         <Navbar />\
         <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24 pt-20">\
-          <Uses />\
+          <ExplorePortfolio />\
         </main>\
         <Footer />\
       </div>\
     );\
   }\
 ' src/App.tsx
-
-# 3. Remove WorkExtras from the main render block
-sed -i '/<WorkExtras \/>/d' src/App.tsx
