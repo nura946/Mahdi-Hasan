@@ -70,7 +70,7 @@ export function ExplorePortfolio() {
   const filteredItems = ITEMS.filter(item => {
     if (search && !item.title.toLowerCase().includes(search.toLowerCase())) return false;
     
-    for (const [key, values] of Object.entries(activeFilters)) {
+    for (const [key, values] of Object.entries(activeFilters) as [string, string[]][]) {
       if (values.length > 0 && !(values as any).includes((item as any)[key])) {
         return false;
       }

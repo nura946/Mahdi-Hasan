@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion, useScroll, useSpring } from "motion/react";
 import { Moon, Sun, Menu, X, ChevronDown, Languages, MessageCircle } from "lucide-react";
+import { Logo } from "../Logo";
 import { useLanguage } from "../../lib/LanguageContext";
 
 type NavLink = {
@@ -12,7 +13,16 @@ type NavLink = {
 
 const NAV_LINKS: NavLink[] = [
   { labelEn: "Home", labelBn: "হোম", href: "#home" },
-  { labelEn: "Services", labelBn: "সার্ভিসেস", href: "#services" },
+  { labelEn: "Course Plan", labelBn: "কোর্স প্ল্যান", href: "#course-plan" },
+  { 
+    labelEn: "Services", 
+    labelBn: "সার্ভিসেস", 
+    subLinks: [
+      { labelEn: "Our Services", labelBn: "আমাদের সার্ভিসেস", href: "#services" },
+      { labelEn: "Projects", labelBn: "প্রজেক্টস", href: "#projects" },
+      { labelEn: "Explore", labelBn: "এক্সপ্লোর", href: "#explore" }
+    ]
+  },
   {
     labelEn: "Academic",
     labelBn: "একাডেমিক",
@@ -38,8 +48,6 @@ const NAV_LINKS: NavLink[] = [
       { labelEn: "Chat with Mahdi", labelBn: "মাহদীর সাথে কথা বলুন", href: "https://wa.me/8801993479343" },
     ],
   },
-  { labelEn: "Projects", labelBn: "প্রজেক্টস", href: "#projects" },
-  { labelEn: "Explore", labelBn: "এক্সপ্লোর", href: "#explore" },
   { labelEn: "Contact", labelBn: "যোগাযোগ", href: "#contact" },
 ];
 
@@ -89,10 +97,10 @@ export function Navbar() {
             href="#home"
             className="font-display text-xl font-bold tracking-tight"
           >
-            Mahdi Hasan<span className="text-brand">.</span>
+            <Logo />
           </a>
 
-          <nav className="hidden lg:flex flex-1 justify-center space-x-6 items-center">
+          <nav className="hidden lg:flex flex-1 justify-center lg:ml-12 space-x-6 xl:space-x-8 items-center">
             {NAV_LINKS.map((link) =>
               link.subLinks ? (
                 <div key={link.labelEn} className="relative group">

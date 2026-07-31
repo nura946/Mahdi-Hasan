@@ -33,7 +33,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <h1 className="font-display text-4xl md:text-6xl font-bold tracking-tight text-gray-900 dark:text-white leading-[1.1] mb-6">
-              {t("Welcome to Mahdi Hasan's Portfolio", "মাহদী হাসানের পোর্টফোলিওতে স্বাগতম")}
+              {t("Welcome to MD. Mahdi Hasan's Portfolio", "মো. মাহদী হাসানের পোর্টফোলিওতে স্বাগতম")}
             </h1>
           </motion.div>
 

@@ -19,6 +19,7 @@ import { ImageGallery } from "./components/sections/ImageGallery";
 import { Uses } from "./components/sections/Uses";
 import { ExplorePortfolio } from "./components/sections/ExplorePortfolio";
 import { WorkExtras } from "./components/sections/WorkExtras";
+import { CoursePlan } from "./components/sections/CoursePlan";
 import { Media } from "./components/sections/Media";
 import { Footer } from "./components/layout/Footer";
 
@@ -139,6 +140,19 @@ export default function App() {
     );
   }
 
+  if (currentHash === "#course-plan") {
+    return (
+      <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
+        <div className="fixed inset-0 bg-white/85 dark:bg-[#0a0a0a]/90 backdrop-blur-[2px] -z-10" />
+        <Navbar />
+        <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24 pt-20">
+          <CoursePlan />
+        </main>
+        <Footer />
+      </div>
+    );
+  }
+
   if (currentHash === "#core-expertise") {
     return (
       <div className="min-h-screen bg-[url('/portfolio-bg.jpg.jpeg')] bg-cover bg-center bg-fixed text-gray-900 dark:text-gray-100 selection:bg-brand/30 font-sans transition-colors duration-300 relative z-0">
@@ -213,6 +227,9 @@ export default function App() {
       <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24">
         <About />
         <Projects />
+      </main>
+      <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24 mb-10">
+        <CoursePlan />
       </main>
       <ImageGallery />
       <main className="max-w-7xl mx-auto px-6 md:px-12 xl:px-24">

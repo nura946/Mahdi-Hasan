@@ -178,13 +178,21 @@ export function Footer() {
               <div className="px-3 bg-white border border-gray-200 rounded shadow-sm flex items-center gap-2 h-10 overflow-hidden">
                 <img src="https://raw.githubusercontent.com/ultraDevs/Bangladeshi-Payment-Gateways/master/assets/images/Rocket.png" alt="Rocket" className="h-6 object-contain" />
               </div>
-              
+
               <div className="px-3 bg-white border border-gray-200 rounded shadow-sm flex items-center gap-2 h-10 overflow-hidden">
                 <img src="https://raw.githubusercontent.com/ultraDevs/Bangladeshi-Payment-Gateways/master/assets/images/Upay.png" alt="Upay" className="h-6 object-contain" />
               </div>
 
               <div className="px-3 bg-white border border-gray-200 rounded shadow-sm flex items-center gap-2 h-10 overflow-hidden">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Dutch_Bangla_Bank_Logo.svg/512px-Dutch_Bangla_Bank_Logo.svg.png" alt="DBBL Nexus" className="h-6 object-contain" />
+                <img src="/payment/dbbl.svg" alt="DBBL" className="h-6 object-contain" />
+              </div>
+              
+              <div className="px-3 bg-white border border-gray-200 rounded shadow-sm flex items-center gap-2 h-10 overflow-hidden">
+                <img src="/payment/brac.svg" alt="BRAC Bank" className="h-6 object-contain" />
+              </div>
+
+              <div className="px-3 bg-white border border-gray-200 rounded shadow-sm flex items-center gap-2 h-10 overflow-hidden">
+                <img src="/payment/islami.svg" alt="Islami Bank" className="h-6 object-contain" />
               </div>
             </div>
           </div>
